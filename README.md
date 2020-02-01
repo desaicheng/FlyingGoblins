@@ -1,4 +1,4 @@
-![Screenshot](flyingGoblinsImage.png)
+![Screenshot](./flyingGoblinsImage.png)
 
 ## Overview
 This is my first attempt at creating a flying goblins game using Pygame and my first attempt at using Pygame. And questions or suggestions are welcomed. The objective is to kill as many goblins as you can while avoiding any of the goblins from hitting you.
