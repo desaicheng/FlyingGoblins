@@ -27,6 +27,10 @@ clock = pygame.time.Clock()
 projectiles = []
 goblins = []
 mainChar = character(50,charY,64,charHeight,6)
+bgMusic = pygame.mixer.music.load('music.mp3')
+pygame.mixer.music.play(-1)
+hitSound = pygame.mixer.Sound('hit.wav')
+gameOverSound = pygame.mixer.Sound('gameOver.wav')
 
 def redrawWindow():
     win.blit(bg,(0,0))
@@ -128,6 +132,7 @@ while run:
             if math.sqrt(((proj.x - (goblin.x + goblin.hitBox[2]/2))**2 + (proj.y - (goblin.y + goblin.hitBox[3]/2))**2)) < proj.radius + math.sqrt((goblin.hitBox[2]/2)**2 + (goblin.hitBox[3]/2)**2):
                 projectiles.pop(projectiles.index(proj))
                 goblins.pop(goblins.index(goblin))
+                hitSound.play()
                 score += 1
         if proj.x < windowWidth and proj.x > 0 and proj.y > 0:
             proj.update()
@@ -139,6 +144,8 @@ while run:
         not goblin.hitBox[0] + goblin.hitBox[2] < mainChar.hitBox[0]) and (
         not goblin.hitBox[0] > mainChar.hitBox[0] + mainChar.hitBox[2]):
             gameOver = True
+            pygame.mixer.music.stop()
+            gameOverSound.play()
             pygame.time.delay(3000)
             break
         if goblin.y < goblin.floor + goblin.charHeight - goblin.goblinHeight:

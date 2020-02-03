@@ -1,5 +1,7 @@
+![](images/flyingGoblinImage.png)
+
 ## Overview
-This is my first attempt at creating a flying goblins game using Pygame and my first attempt at using Pygame. And questions or suggestions are welcomed. The objective is to kill as many goblins as you can while avoiding any of the goblins from hitting you.
+This is my first attempt at creating a flying goblins game using Pygame and my first attempt at using Pygame. Any questions or suggestions are welcomed. The objective is to kill as many goblins as you can while avoiding any of the goblins from hitting you.
 
 ## Running the game
 To run the game first clone the repository and run pythonGame.py. Make sure you have pygame installed as well as the math and random packages.
